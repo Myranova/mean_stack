@@ -5,6 +5,12 @@ var express = require('express'),
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'developpement';
 
+if (env == "developpement") {
+    mongoose.connect('mongodb://localhost/multivision');
+} else {
+    mongoose.connect("mongodb://Myranova:POKEMYRE978@ds263660.mlab.com:63660/axel");
+}
+
 var app = express();
 
 function compile(str, path) {
@@ -23,8 +29,6 @@ app.use(stylus.middleware(
 
 app.use(express.static(__dirname + '/public'));
 
-mongoose.connect("mongodb://localhost/multivision");
-
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error...'));
@@ -33,7 +37,7 @@ db.once('open', function callback() {
 });
 
 var messageSchema = mongoose.Schema({message : String}); // Create a database class (schema)
-var Message = mongoose.model("Message", messageSchema); // Create a ...
+var Message = mongoose.model("Message", messageSchema); // Create a model in the database (like an SQL table)
 var mongoMessage = new Message({message : "Hello Im the best"}); //create an object of the schema
 
 mongoMessage.save(function(err, doc) {
@@ -52,6 +56,8 @@ app.get('*', function(req, res) {
     });
 })
 
-app.listen(3030);
+var port = process.env.PORT || 3030;
 
-console.log("listening to port : " + 3030);
+app.listen(port);
+
+console.log("listening to port : " + port);
