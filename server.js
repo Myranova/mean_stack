@@ -36,15 +36,6 @@ db.once('open', function callback() {
     console.log('multivision db opened');
 });
 
-var messageSchema = mongoose.Schema({message : String}); // Create a database class (schema)
-var Message = mongoose.model("Message", messageSchema); // Create a model in the database (like an SQL table)
-var mongoMessage = new Message({message : "Hello Im the best"}); //create an object of the schema
-
-mongoMessage.save(function(err, doc) {
-    Message.findOne().exec(function(err, messageDoc) {
-        mongoMessage = messageDoc.message;
-    }) 
-})
 
 app.get('/partials/:partialPath', function(req, res) {
     res.render('partials/' + req.params.partialPath);
@@ -52,7 +43,6 @@ app.get('/partials/:partialPath', function(req, res) {
 
 app.get('*', function(req, res) {
     res.render('index', {
-        mongoMessage : mongoMessage
     });
 })
 
