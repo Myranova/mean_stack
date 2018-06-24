@@ -7,4 +7,12 @@ module.exports = function(app) {
         res.render('index', {
         });
     })
+
+    app.post('/login', function(req, res, next) {
+        var auth = passport.authentificate('local', function(err, user) {
+            if (err) { return next(err); }
+            if (!user) { res.send({success : false});
+            }
+        })
+    })
 }
