@@ -13,17 +13,23 @@ require('./server/config/express')(app, config);
 
 require('./server/config/mongoose')(config);
 
-require('./server/config/routes')(app);
-
 var User = mongoose.model("User");
  //New Way to Write mongoose.model ?
-passport.use(new LocalStrategy( //what is a local strategy ?
+
+console.log("After mongoose.model");
+passport.use(new LocalStrategy(
     function(username, password, done)
     {
+        console.log("username in passport : " + username);
         User.findOne({username:username}).exec(function(err, user) {
+            if (err) {
+                console.log("error");
+            }
             if (user) {
+                console.log("user found");
                 return done(null, user);
             } else {
+                console.log("user not found");
                 return (done(null, false)); //what is done ??
             }
         })
@@ -32,6 +38,7 @@ passport.use(new LocalStrategy( //what is a local strategy ?
 
 passport.serializeUser(function(user, done) {
     if (user) {
+        console.log("User serialized : " + user);
         done(null, user_id);
     }
 });
@@ -39,6 +46,7 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(id, done) {
     User.findOne({_id : id}).exec(function(err, user)
     {
+        console.log("deserialize : " + user);
         if (user) {
             return done(null, user);
         }
@@ -47,6 +55,8 @@ passport.deserializeUser(function(id, done) {
         }
     });
 })
+
+require('./server/config/routes')(app);
 
 app.listen(config.port);
 

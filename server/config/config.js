@@ -1,11 +1,11 @@
 var path = require('path'); //voir la classe précisemment
 
-var rootPath = path.normalize(__dirname + "../../") //what is normalize ?
+var rootPath = path.normalize(__dirname + "../../../") //what is normalize ?
 
 module.exports = { //why exports and not just require ?
     developpement : {
         db : "mongodb://localhost/multivision",
-        rooPath : rootPath,
+        rootPath : rootPath,
         port : process.env.PORT || 3030
     },
     production : {
