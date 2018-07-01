@@ -1,21 +1,16 @@
-console.log("enter controller of navbar");
-
-angular.module('app').controller('mvNavBarLoginCtrl', function($http, $scope) {
+angular.module('app').controller('mvNavBarLoginCtrl', function($http, $scope, mvIdentity, mvNotifier) {
         $scope.signin = function(username, password) {
-        console.log("im not done yet");
         $http.post('/login', {username:username, password:password}).then(function(response)
         {
-            console.log("login : " + username);
-            console.log("response : " + response);
-            if (response.data.success) {         
-                console.log('logged in !');
+            if (response.data.success) {
+                mvIdentity.currentUser = response.data.user;  
+                console.log("login success");
+                mvNotifier.notify("login success !");
             }
             else {
-                console.log('failed to login !');
+                mvNotifier.notify('failed to login !');
             }
         })
     }
 }
 )
-
-console.log("end of mvNavBarLoginCtrl");

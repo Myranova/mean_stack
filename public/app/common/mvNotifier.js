@@ -1,9 +1,9 @@
-angular.module('app').value('mvToaster', toastr); //what ? 
+angular.module('app').value('mvToastr', toastr); //what ? 
 
 angular.module('app').factory('mvNotifier', function(mvToastr) {
     return {
         notify : function(msg) {
-            mvToaster.success(msg);
+            mvToastr.success(msg);
             console.log(msg);
         }       
     }
