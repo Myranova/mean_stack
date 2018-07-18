@@ -4,13 +4,78 @@ block main-content
     .navbar.navbar-inverse.navbar-fixed-top
         .container
             .navbar-header
-                a.navbar-brand(href="") Multivision
-                    h6 - Extreme tech training
+                a.navbar-brand(href="") Project Opaline
+                    h6 - Project Opaline
             .navbar-collapse.collapse
+                div(ng-include="'/partials/account/navbar-login'")
                 ul.nav.navbar-nav
                     li
                         a(href="/") Home
-                div(ng-include="'/partials/account/navbar-login'")
+                    li
+                        a(href="/") Documentation
+                    li
+                        a(href="/") Modules
+                    li
+                        a(href="/") Tutorial
+                    li
+                        a(href="/") Software
+                
+         //input(type="image" src="ressources/img/150428_USALR-Bouton-Inscription.png" onclick="poppy()") CA MARCHE OMG
     section.content
         div(ng-view)
     h2= mongoMessage
+
+    section(class="team")
+        h2(class="mean_title") Project Opaline's teams
+        ul(class="pres")
+            li
+                a(href="#")
+                    img(src="../../ressources/img/photos/bavoys_j.jpg")
+                span(class="_name") Julien Bavoysi
+            li
+                a(href="#")
+                    img(src="../../ressources/img/photos/frasse_1.JPG")
+                span(class="_name") Loic Frasse
+            li
+                a(href="#")
+                    img(src="../../ressources/img/photos/doyen_b.jpg")
+                span(class="_name") Benoît Doyen
+            li
+                a(href="#")
+                    img(src="../../ressources/img/photos/weber_f.jpg")
+                span(class="_name") Alexandre Weber
+            li
+                a(href="#")
+                    img(src="../../ressources/img/photos/lavergn_r.jpg")
+                span(class="_name") Rémi Lavergne
+            li
+                a(href="#")
+                    img(src="../../ressources/img/photos/saint-_c.jpg")
+                span(class="_name") Saint Sorni
+            li
+                a(href="#")
+                    img(src="../../ressources/img/photos/rivoire_a.JPG")
+                span(class="_name") Guillaume Rivoire
+            
+          
+
+    footer
+        div(class="contact" id="contact")
+            div(class="small-12 medium-4 large-4 columns")
+              div(class="copyrights")
+                a(class="logo" href="#")
+                    h1 projectOpalin
+                        img(src="./ressources/img/SUE_Logo.png")
+
+        div(class="small-12 medium-8 large-8 columns")
+            div(class="contact_details right")  
+                div(class="contact_mail")
+                    h1 Contact
+                    p projectopaline_2019@labeip.epitech.eu
+
+                div(class="social")
+                    h1 Social Network
+                    ul
+                        li: a(href="#book-a") Facebook
+                        li: a(href="#book-b") Twitter
+                        li: a(href="#book-b") Google Plus
