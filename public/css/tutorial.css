@@ -1,0 +1,35 @@
+/****************/
+/****************/
+/*   Tutorial   */
+/****************/
+/****************/
+
+.tutorial{
+    align-items: left;
+    padding: 0px auto;
+    margin-right: auto;
+    margin-left: 80px /*auto*/;
+    width: 888px;
+}
+
+.tutorial .mean_title{
+    text-align: left;
+    color: #ff4c4c;
+
+    font-size: 30px;
+    font-family: "Roboto-Bold", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.tutorial .tutorial_icon{
+    margin-bottom: 60px;
+}
+
+.tutorial p{
+    color: #454545;
+    font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 30px;
+}

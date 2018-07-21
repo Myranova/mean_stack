@@ -8,13 +8,16 @@ html
         link(rel="stylesheet", href="/vendor/toastr/toastr.css")
         link(rel="stylesheet", href="/css/site.css")
         link(rel="stylesheet", href="/css/modules.css")
+        link(rel="stylesheet", href="/css/home.css")
+        link(rel="stylesheet", href="/css/tutorial.css")
+        link(rel="stylesheet", href="/css/download.css")
     body(ng-app='app')
         block main-content
             .navbar.navbar-inverse.navbar-fixed-top
                 .container
                     .navbar-header
-                        a.navbar-brand(href="") Project Opaline
-                            h6 - Project Opaline
+                        img(src="./ressources/img/SUE_Logo.png")
+                        a(class="navbar-brand", ui-sref="#") S.U.E
                     .navbar-collapse.collapse
                         div(ng-include="'/partials/account/navbar-login'")
                         ul.nav.navbar-nav
@@ -33,27 +36,23 @@ html
             section.content
                 div(ng-view)
             h2= mongoMessage
-
-
     footer
         div(class="contact" id="contact")
             div(class="small-12 medium-4 large-4 columns")
               div(class="copyrights")
-                a(class="logo" href="#")
-                    h1 projectOpalin
+                a(class="logo")
+                    h1 projectOpaline
                         img(src="./ressources/img/SUE_Logo.png")
-
-        div(class="small-12 medium-8 large-8 columns")
-            div(class="contact_details right")  
-                div(class="contact_mail")
-                    h1 Contact
-                    p projectopaline_2019@labeip.epitech.eu
-
-                div(class="social")
-                    h1 Social Network
-                    ul
-                        li: a(href="#book-a") Facebook
-                        li: a(href="#book-b") Twitter
-                        li: a(href="#book-b") Google Plus
+            div(class="small-12 medium-8 large-8 columns")
+                div(class="contact_details right")  
+                    div(class="contact_mail")
+                        h1 Contact
+                        p projectopaline_2019@labeip.epitech.eu
+                    div(class="social")
+                        h1 Social Network
+                        ul
+                            li: a(href="https://www.facebook.com/") Facebook
+                            li: a(href="https://www.twitter.com") Twitter
+                            li: a(href="https://google.fr") Google Plus
 
 include scripts

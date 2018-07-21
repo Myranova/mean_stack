@@ -25,9 +25,15 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/software', {templateUrl : '/partials/main/software', controller: 'mvMainCtrl'});
    });
 
+   angular.module('app').config(function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+    $routeProvider.when('/ressources/Release.7z', {templateUrl : '/partials/main/software', controller: 'mvMainCtrl'});
+   });
+
 
 angular.module('app').controller('mvMainCtrl', function($scope) {
     $scope.myVar = "Hello Angular";
+    $scope.fileHref = "/ressources/release.7z";
 });
 
 

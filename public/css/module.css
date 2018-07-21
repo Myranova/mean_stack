@@ -1,0 +1,77 @@
+.modules{
+    align-items: center;
+    padding: 0px auto;
+    margin-right: auto;
+    margin-left: auto;
+
+    width: 1088px;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.mean_title{
+    text-align: center;
+    color: #ff4c4c;
+    font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
+}
+
+.modules img{
+    left: inherit;
+}
+
+.modules h3,
+.modules h4{
+    border: 2px #ff4c4c;
+    color: #ff4c4c;
+    font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
+}
+
+.modules .mean_title{
+    font-size: 30px;
+    font-family: "Roboto-Bold", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.modules h3{
+    font-size: 22px;
+    font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
+    font-weight: lighter;
+}
+
+.modules h4{
+    font-size: 22px;
+    font-family: "Roboto-Light", Helvetica, Arial, sans-serif;
+    font-weight: lighter;
+    text-transform: lowercase;
+}
+
+.modules p{
+    color: #454545;
+    font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.modules .title{
+    color: #454545;
+    font-family: "Roboto-Bold", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px
+}
+
+.modules .md-list-item-text{
+    border-style: solid;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-color: grey;
+    border-width: 1px;
+}
+
+.listdemoBasicUsage md-divider {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
