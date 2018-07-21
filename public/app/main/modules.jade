@@ -1,10 +1,11 @@
 .container
     .jumbotron
-        h1 Project Opaline
-        p Le projet Opaline consiste en un moteur de jeu modulaire 2D et un site relié à celui-ci. La modularité permettra au créateur de jeu de se focaliser sur son travail en se déchargeant de ce qui le ralentirait. Le site associé fera vivre une communauté autour du moteur et aidera les utilisateurs
+        h1 Module plateforme
+        p Créer un jeu de plateforme grâce à de simples éléments
+        p Comprend un set pour les plateformes, ainsi qu'un point de départ et d'arrivé.
 
-    .row
-        .col-md-6
-            div(ng-include="'/partials/main/featured-courses'")
-        .col-md-6
-            div(ng-include="'/partials/main/new-courses'")
+section.modules
+  div(ng-controller='mvMainCtrl', ng-cloak='')
+        img(src='ressources/img/game11.jpg', href="ressources/Release.7z")
+        h3 {{ item.myVar }}
+        img(src='ressources/img/telecharger-module.png', style='right: auto')
